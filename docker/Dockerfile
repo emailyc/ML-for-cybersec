@@ -1,6 +1,6 @@
-FROM ubuntu:18.04
+FROM ubuntu:22.04
 
-LABEL maintainer="pughdr <david.pugh@kaust.edu.sa>"
+LABEL maintainer="yiuchungwong <yiuchungwong@icloud.com>"
 
 SHELL [ "/bin/bash", "--login", "-c" ]
 
@@ -10,7 +10,7 @@ RUN apt-get update --fix-missing && \
     rm -rf /var/lib/apt/lists/*
 
 # Create a non-root user
-ARG username=al-khawarizmi
+ARG username=chung
 ARG uid=1000
 ARG gid=100
 ENV USER $username
@@ -41,10 +41,12 @@ USER $USER
 # install miniconda
 ENV MINICONDA_VERSION latest
 ENV CONDA_DIR $HOME/miniconda3
-RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-$MINICONDA_VERSION-Linux-x86_64.sh -O ~/miniconda.sh && \
+# RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-$MINICONDA_VERSION-Linux-x86_64.sh -O ~/miniconda.sh && \
+RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-aarch64.sh -O ~/miniconda.sh && \
     chmod +x ~/miniconda.sh && \
     ~/miniconda.sh -b -p $CONDA_DIR && \
     rm ~/miniconda.sh
+    
 
 # make non-activate conda commands available
 ENV PATH=$CONDA_DIR/bin:$PATH
