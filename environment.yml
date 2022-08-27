@@ -22,6 +22,7 @@ dependencies:
   - jupyterlab-lsp
   - lightgbm
   - matplotlib
+  - markovify
   - numba
   - numpy
   - optuna
@@ -37,6 +38,7 @@ dependencies:
   - scikit-learn
   - scipy
   - shap
+  - statsmodels
   - umap-learn
   - wandb
   - xarray
