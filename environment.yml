@@ -23,6 +23,7 @@ dependencies:
   - lightgbm
   - matplotlib
   - markovify
+  - nltk
   - numba
   - numpy
   - optuna
@@ -31,8 +32,9 @@ dependencies:
   - pip
   - pip:
     - -r file:requirements.txt
+  - plotly
   - pyarrow
-  - python=3.7
+  - python=3.10
   - python-language-server
   - pyviz_comms
   - scikit-learn
