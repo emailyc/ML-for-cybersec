@@ -41,6 +41,7 @@ dependencies:
   - scipy
   - shap
   - statsmodels
+  - torch
   - umap-learn
   - wandb
   - xarray
